@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      css/styles.css: {}
+
+react_app:
+  version: VERSION
+  js:
+    js/dist/main.min.js: { minified: true }

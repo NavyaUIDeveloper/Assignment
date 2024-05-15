@@ -1,0 +1,15 @@
+name: Product Listing
+type: theme
+base theme: false
+description: A clean, accessible, and flexible Drupal front-end theme.
+core_version_requirement: ^8 || ^9 || ^10
+
+libraries:
+  - productlisting/global-styling
+  - productlisting/react_app
+
+regions:
+  header: Header
+  breadcrumb: Breadcrumb
+  content: Content
+  footer: Footer

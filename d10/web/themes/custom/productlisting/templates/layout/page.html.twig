@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <header>
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+  </header>
+  <main>
+    <div id="react-app" class="main-content-wrapper"></div>
+    {% if page.content %}
+      <div class="main-content-wrapper">
+        {{ page.breadcrumb }}
+        {{ page.content }}
+      </div>
+    {% endif %}
+  </main>
+  <footer>
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  </footer>
+</div>
