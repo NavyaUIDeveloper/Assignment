@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     // Fetch products from API
-    fetch('https://d10.ddev.site/api/v2/products?_format=json')
+    fetch('/api/v2/products?_format=json')
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -35,6 +35,7 @@ function App() {
         price: product.field_selling_price,
         stock: product.field_product_stock,
         quantity: 1,
+        image: product.field_product_image, // Add this line to include image in cart item
       };
     }
     setCart(updatedCart);

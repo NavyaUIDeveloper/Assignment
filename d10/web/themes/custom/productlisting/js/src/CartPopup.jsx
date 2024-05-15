@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles/CartPopup.css';
 
 const CartPopup = ({ isCartOpen, toggleCart, cart, updateQuantity, removeFromCart }) => {
   const totalCartItems = Object.values(cart).reduce((total, item) => total + item.quantity, 0);
@@ -27,8 +26,8 @@ const CartPopup = ({ isCartOpen, toggleCart, cart, updateQuantity, removeFromCar
                         <img src={item.image} alt={item.name} />
                       </div>
                       <div className="item-details">
-                        <p>{item.name}</p>
-                        <p>${item.price}</p>
+                        <span className='prduct-title'>{item.name}</span>
+                        <span>${item.price}</span>
                       </div>
                       <div className="quantity-controls">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
@@ -43,7 +42,6 @@ const CartPopup = ({ isCartOpen, toggleCart, cart, updateQuantity, removeFromCar
                   ))}
                 </div>
                 <div className="cart-summary">
-                  <p>Total Items: {totalCartItems}</p>
                   <p>Total Price: ${totalPrice.toFixed(2)}</p>
                 </div>
               </div>
