@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 import CartPopup from './CartPopup';
+import Product from './Product';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -71,23 +72,12 @@ function App() {
       ) : (
         <div className='product-list-view-page'>
           {products.map((product) => (
-            <div key={product.nid} className='product-list-items'>
-              <div className='card-wrapper'>
-                <div className='product-list-wrapper'>
-                  <div className='product-image'>
-                    <img src={product.field_product_image} alt={product.field_product_name} />
-                  </div>
-                  <h2 className='product-name'>{product.field_product_name}</h2>
-                  <div className='product-cart-wrapper'>
-                    <div className='selling-price'>${product.field_selling_price}</div>
-                    <div className='add-to-cart'><button onClick={() => addToCart(product)}>Add to Cart</button></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Product key={product.nid} product={product} addToCart={addToCart} />
           ))}
           <div className='view-cart-block'>
-            <button onClick={toggleCart}>View Cart</button>
+            <button onClick={toggleCart} className={Object.keys(cart).length > 0 ? "cart-filled" : ""}>
+              View Cart {Object.keys(cart).length > 0 && `(${Object.values(cart).reduce((total, item) => total + item.quantity, 0)})`}
+            </button>
           </div>
           <CartPopup
             isCartOpen={isCartOpen}

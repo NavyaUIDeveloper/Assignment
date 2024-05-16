@@ -26,7 +26,7 @@ const CartPopup = ({ isCartOpen, toggleCart, cart, updateQuantity, removeFromCar
                         <img src={item.image} alt={item.name} />
                       </div>
                       <div className="item-details">
-                        <span className='prduct-title'>{item.name}</span>
+                        <span className='product-title'>{item.name}</span>
                         <span>${item.price}</span>
                       </div>
                       <div className="quantity-controls">

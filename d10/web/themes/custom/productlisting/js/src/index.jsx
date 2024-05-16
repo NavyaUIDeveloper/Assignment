@@ -1,19 +1,12 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
-// // # Example 1: Simple "Hello, World" code
-// ReactDOM.render(
-//   <h1>Hello there - world!</h1>,
-//   document.getElementById('react-app')
-// );
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './App';
+import store from './store';
 
-const root = ReactDOM.createRoot(document.getElementById('react-app'));
-root.render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>,
+  document.getElementById('react-app')
 );
